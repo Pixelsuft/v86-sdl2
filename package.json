@@ -1,0 +1,30 @@
+{
+  "name": "v86-sdl2",
+  "version": "1.0.0",
+  "description": "Virtual x86 for NodeJS with SDL2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pixelsufted/v86-sdl2.git"
+  },
+  "keywords": [
+    "v86",
+    "nodejs",
+    "sdl2"
+  ],
+  "author": "Pixelsuft",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Pixelsufted/v86-sdl2/issues"
+  },
+  "homepage": "https://github.com/Pixelsufted/v86-sdl2#readme",
+  "dependencies": {
+    "minsdl2js": "^1.2.0",
+    "speaker": "^0.5.4",
+    "web-audio-engine": "^0.13.4",
+    "ws": "^8.8.1"
+  }
+}

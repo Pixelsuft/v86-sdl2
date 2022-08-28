@@ -1,0 +1,29 @@
+{
+  "wasm_path": "./build/v86.wasm",
+  "memory_size": "128 * 1024 * 1024",
+  "vga_memory_size": "32 * 1024 * 1024",
+  "bios": {
+    "url": "./bios/seabios.bin"
+  },
+  "vga_bios": {
+    "url": "./bios/vgabios.bin"
+  },
+  "acpi": false,
+  "autostart": true,
+  "boot_order": "0x132",
+  "renderer": "opengl",
+  "renderer_accererated": true,
+  "center_window": true,
+  "resizable": false,
+  "vsync": true,
+  "mouse_sens": "0.15 * 2",
+  "font": "liberationmonob",
+  "font_size": 15,
+  "char_size": [9, 16],
+  "charmap_high": "cp437",
+  "speaker": false,
+  "use_serial": false,
+  "hook_time": true,
+  "disable_text_mode": false,
+  "name": "Example"
+}
