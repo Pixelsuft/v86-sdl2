@@ -329,15 +329,16 @@ function tick() {
           break;
         if (use_serial)
           process.stdin.pause();
-        e.destroy();
-        SDL_DestroyRenderer(renderer);
-        SDL_DestroyWindow(window);
-        if (!disable_text) {
-          TTF_CloseFont(font);
-          TTF_Quit();
-        }
-        SDL_Quit();
-        process.exit(0);
+        e.destroy().then(function() {
+          SDL_DestroyRenderer(renderer);
+          SDL_DestroyWindow(window);
+          if (!disable_text) {
+            TTF_CloseFont(font);
+            TTF_Quit();
+          }
+          SDL_Quit();
+          process.exit(0);
+        });
         return;
     }
   }
