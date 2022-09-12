@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const sdl2 = require('minsdl2js');
 const ws = require('ws');
+const filebuf = require('./filebuf');
 
 global.ImageData = function(buffer, width, height) {
   buffer.data = buffer;
@@ -118,5 +119,13 @@ exports.get_config = function() {
   if (typeof result.mouse_sens == 'string') {
     result.mouse_sens = eval(result.mouse_sens);
   }
+  ['fda', 'fdb', 'hda', 'hdb', 'cdrom'].forEach(function(drive) {
+    if (typeof result[drive] == 'undefined' || !result[drive].nodejs_buffer)
+      return;
+    result[drive] = new filebuf.AsyncNodeJSBuffer(
+      result[drive].url || result[drive].path || result[drive].name || result[drive].fn,
+      drive !== 'cdrom'
+    );
+  });
   return result;
 }

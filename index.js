@@ -327,6 +327,11 @@ function tick() {
       case SDL_QUIT:
         if (mouse_locked)
           break;
+        e.disk_images.fda && e.disk_images.fda.destroy && e.disk_images.fda.destroy();
+        e.disk_images.fdb && e.disk_images.fdb.destroy && e.disk_images.fdb.destroy();
+        e.disk_images.hda && e.disk_images.hda.destroy && e.disk_images.hda.destroy();
+        e.disk_images.hdb && e.disk_images.hdb.destroy && e.disk_images.hdb.destroy();
+        e.disk_images.cdrom && e.disk_images.cdrom.destroy && e.disk_images.cdrom.destroy();
         if (use_serial)
           process.stdin.pause();
         e.destroy().then(function() {
