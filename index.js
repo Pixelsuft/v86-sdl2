@@ -2,6 +2,7 @@ const utils = require('./utils');
 const screen_tools = require('./screen_tools');
 const speaker = require('./speaker');
 const keyboard = require('./keyboard');
+const net = require('./net/net');
 const v86 = require('./build/libv86.js');
 
 
@@ -33,6 +34,8 @@ const e = new v86.V86Starter(config);
 e.bus.register('emulator-ready', function() {
   if (config.speaker)
     new speaker.SpeakerAdapter(e.bus);
+  if (config.pcap)
+    new net.NetworkAdapter(config, e.bus);
   if (!config.autostart)
     e.bus.send('cpu-run');
   setImmediate(tick);

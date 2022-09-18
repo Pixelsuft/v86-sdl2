@@ -3,3 +3,5 @@ build
 configs
 node_modules
 package-lock.json
+*.dll
+*.so

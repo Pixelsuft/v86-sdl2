@@ -24,7 +24,6 @@
   "dependencies": {
     "minsdl2js": "^1.2.0",
     "speaker": "^0.5.4",
-    "web-audio-engine": "^0.13.4",
-    "ws": "^8.8.1"
+    "web-audio-engine": "^0.13.4"
   }
 }

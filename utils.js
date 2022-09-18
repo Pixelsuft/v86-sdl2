@@ -2,7 +2,6 @@ process.env.sdl2_global_export = 'true';
 const fs = require('fs');
 const path = require('path');
 const sdl2 = require('minsdl2js');
-const ws = require('ws');
 const filebuf = require('./filebuf');
 
 global.ImageData = function(buffer, width, height) {
@@ -10,12 +9,6 @@ global.ImageData = function(buffer, width, height) {
   buffer.virtual_width = width;
   buffer.virtual_height = height;
   return buffer;
-}
-
-global.WebSocket = function(url) {
-  return new ws.WebSocket(url, {
-    perMessageDeflate: false
-  });
 }
 
 exports.get_renderer_by_name = function(renderer_name) {
@@ -127,5 +120,6 @@ exports.get_config = function() {
       drive !== 'cdrom'
     );
   });
+  // result['pcap'] = 'enp7s0';
   return result;
 }
