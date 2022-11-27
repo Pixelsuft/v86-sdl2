@@ -4,6 +4,7 @@ const path = require('path');
 const sdl2 = require('minsdl2js');
 const ws = require('ws');
 const filebuf = require('./filebuf');
+const pit = require('./pit');
 
 global.ImageData = function(buffer, width, height) {
   buffer.data = buffer;
@@ -17,6 +18,8 @@ global.WebSocket = function(url) {
     perMessageDeflate: false
   });
 }
+
+global.CPIT = pit.PIT;
 
 exports.get_renderer_by_name = function(renderer_name) {
   var renderers = [];
